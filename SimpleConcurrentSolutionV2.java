@@ -69,8 +69,7 @@ public class SimpleConcurrentSolutionV2 {
 
         // Criação e Início das Threads
         Thread tLogs = new Thread(logSetupTask, "tLogs"); //, "Setup-Logs");
-        //Thread tCheck = new Thread(checkInstance, "tCheck"); //, "Check-Recursos");
-
+        
         // Início da execução concorrente
         tLogs.start();
 

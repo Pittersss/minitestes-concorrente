@@ -1,5 +1,9 @@
-Q1) Sim, observa-se que a ordem de execução das etapas é misturada, ou seja, a configuração de logs é mesclada com as 5 ramificações de verificação de recursos, sem demonstrar um padrão.
-Q2) Sim, o output das threads agora referencia qual das etapas está sendo executada, ou seja, facilita na depuração mostrando a sua ligação com a funcionalidade de logs ou verificação de recursos
-Q3) Nota-se que a thread principal pode acabar sendo finalizada antes das demais threads.
-Q4) Agora a thread main só finaliza após a conclusão das outras duas threads (tLogs e tCheck). Além disso, o fluxo de execução mudou sim, pois a thread main não será a primeira a ser finalizada
+Q1) Sim, observa-se que a ordem de execução das etapas é misturada, ou seja, a configuração de logs é mesclada
+com as 5 ramificações de verificação de recursos, sem demonstrar um padrão.
+Q2) Nota-se que no novo código são criadas as threads tLogs e tCheck. Sim, o output das threads agora referencia qual das etapas está 
+sendo executada, ou seja, facilita na depuração mostrando
+a sua ligação com a funcionalidade de logs ou verificação de recursos.
+Q3) Nota-se que a thread principal sempre é a primeira a iniciar, mas pode acabar sendo finalizada antes das demais threads.
+Q4) Agora a thread main só finaliza após a conclusão das outras duas threads (tLogs e tCheck). Sim, o fluxo de execução mudou,
+pois a thread main não será a primeira a ser finalizada.
 
