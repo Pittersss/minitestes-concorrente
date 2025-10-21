@@ -1,0 +1,10 @@
+Observa-se que na execução do cõdigo serial não houve alteração na ordem de execução das tarefas.
+O comportamento da execução é da seguinte forma:
+Primeiramente, configura-se os logs do inicio ao fim. Após isso, verifica-se os recursos em ordem crescente do 1 ao 5.
+Além disso, nota-se que o tempo de execução minimo é 5 segundos e o máximo é 7 segundos. A função executeLogSetup sempre leva 4 segundos, enquanto que a função
+executeResourceCheck leva entre 1 a 3 segundos. Assim, no melhor cenário o código serial leva 5 segundos (1 + 4), enquanto no pior cenário dura 7 segundos (3 + 4)
+
+Q1) Sim, observa-se que a ordem de execução das etapas é misturada, ou seja, a configuração de logs é mesclada com as 5 ramificações de verificação de recursos, sem demonstrar um padrão.
+Q2) Sim, o output das threads agora referencia qual das etapas está sendo executada, ou seja, facilita na depuração mostrando a sua ligação com a funcionalidade de logs ou verificação de recursos
+Q3) Nota-se que a thread principal pode acabar sendo finalizada antes das demais threads.
+Q4) Agora a thread main só finaliza após a conclusão das outras duas threads (tLogs e tCheck). Além disso, o fluxo de execução mudou sim, pois a thread main não será a primeira a ser finalizada
